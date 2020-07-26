@@ -1,0 +1,135 @@
+// compress: true
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+.wrapper {
+  padding: 50px;
+}
+.todo {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: sans-serif;
+
+  .todo__input {
+    width: 100%;
+    display: flex;
+    .input {
+      flex-basis: 80%;
+      margin-right: 20px;
+      padding: 10px 15px;
+      font-size: 20px;
+      border: 1px solid #acacac;
+      border-radius: 6px;
+      box-shadow: 1px 2px 4px rgb(119, 119, 119);
+      color: #353535;
+      &:focus {
+        outline: none;
+      }
+    }
+    .todo__add {
+      flex-basis: 20%;
+      padding: 10px 15px;
+    }
+  }
+  .todo__list {
+    margin-top: 30px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px rgb(119, 119, 119);
+    .todo__title {
+      font-weight: bold;
+      font-size: 22px;
+      border-bottom: 1px solid #cccccc;
+      padding: 20px;
+    }
+    .todo__items {
+      list-style: none;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column-reverse;
+
+      .todo__item {
+        &:first-child {
+          border-bottom: none;
+        }
+        &:last-child {
+          padding-top: 30px;
+        }
+        &.done {
+          .todo__text {
+            text-decoration: line-through;
+            color: #a8a8a8;
+          }
+        }
+        
+
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 1px solid #cccccc;
+
+        display: flex;
+        align-items: center;
+
+        .todo__checkbox {
+          margin-right: 15px;
+          padding: 5px;
+        }
+        .todo__text {
+          font-size: 18px;
+          color: #3b3b3b;
+
+          &.empty {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            opacity: 0.7;
+            width: 100%;
+          }
+        }
+        .todo__delete {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  .btn {
+    text-align: center;
+    background-color: #1890FF;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: background-color 0.12s ease;
+    box-shadow: 1px 2px 4px rgb(119, 119, 119);
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &-add {
+    background-color: #1890FF;
+      &:hover {
+        cursor: pointer;
+        background-color: darken(#1890FF, 5%);
+      }
+      &:active {
+        background-color: darken(#1890FF, 10%);
+      }
+    }
+    &-delete {
+    background-color: #d82222;
+      &:hover {
+        cursor: pointer;
+        background-color: darken(#d82222, 5%);
+      }
+      &:active {
+        background-color: darken(#d82222, 10%);
+      }
+    }
+  }
+}
